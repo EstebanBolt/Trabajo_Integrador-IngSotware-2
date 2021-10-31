@@ -1,0 +1,13 @@
+{
+    "name": "esteban/tp-tests-unitarios",
+    "description": "trabajo Integrador Ingsoftware2 Goncalves/Valladar",
+    "type": "project",
+    "license": "gpl",    
+    "require": {
+        "phpunit/phpunit": "^9.5"
+    },"autoload": {
+        "psr-4": {
+            "App\\": "app"
+        }
+    }
+}
