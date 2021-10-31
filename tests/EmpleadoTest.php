@@ -27,6 +27,48 @@
 
     }
 
+    //Comienzo con los tests para Empleado
+     
+    public function test_Prueba_Si_Se_Envia_Un_Dni_Vacio()
+    {
+    $this->expectException(\Exception::class);
+    //Primero envio la carga completa y falla
+    $Emp=new\App\Empleado($nombre = "Esteban", $apellido = "Valladar", $dni = 30484549, $salario = 58000,$sector="No especificado"); 
+    //Si envio alguno de los datos vacios, en este caso dni vacio, el test saldra correcto, ya que produce la exepcion
+    $Emp=new\App\Empleado($nombre = "Esteban", $apellido = "Valladar", $dni = NULL, $salario = 58000,$sector="No especificado"); 
+    }
+
+     public function test_Prueba_Si_Se_Envia_String_o_Caracteres_Dni()
+    {
+    $this->expectException(\Exception::class);
+
+    $Emp=new\App\Empleado($nombre="Esteban",$apellido="Valladar",$dni="hjk",$salario=45000,$sector="No especificado"); 
+    }
+
+    public function test_Prueba_Si_Se_Crea_Nombre_Vacio()
+    {
+    $this->expectException(\Exception::class);
+
+    $Emp=new\App\Empleado($nombre="",$apellido="Valladar",$dni=30484549,$salario=45000,$sector="No especificado"); 
+    }
+
+    public function test_To__string()
+    {
+
+    $this->expectException(\Exception::class);
+
+    $Emp=new\App\Empleado($nombre="Esteban",$apellido="Valladar",$dni=30484549,$salario=45000); 
+
+    }
+    
+
+        public function test_Prueba_Si_Se_Crea_Apellido_Vacio()
+    {
+    $this->expectException(\Exception::class);
+
+    $Emp=new\App\Empleado($nombre="Esteban",$apellido="",$dni=30484549,$salario="45000",$sector="No especificado"); 
+    }
+
     
 
     
