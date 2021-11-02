@@ -34,7 +34,7 @@
     $this->expectException(\Exception::class);
     //Primero envio la carga completa y falla
     $Emp=new\App\Empleado($nombre = "Esteban", $apellido = "Valladar", $dni = 30484549, $salario = 58000,$sector="No especificado"); 
-    //Si envio alguno de los datos vacios, en este caso dni vacio, el test saldra correcto, ya que produce la exepcion
+    //Si envio alguno de los datos vacios, en este caso dni vacio, el test saldra correcto, ya que produce la exepcion dada en la clase Empleado
     $Emp=new\App\Empleado($nombre = "Esteban", $apellido = "Valladar", $dni = NULL, $salario = 58000,$sector="No especificado"); 
     }
 

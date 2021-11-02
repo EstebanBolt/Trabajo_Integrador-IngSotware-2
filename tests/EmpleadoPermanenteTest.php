@@ -49,6 +49,14 @@ class Empleado_permanente_test extends \PHPUnit\Framework\TestCase
     $this->assertEquals(0,$Emp->calcularAntiguedad());
 	}
 
+	public function Test_Creacion_De_fechas_futuras()
+	{
+
+	$this->expectException(\Exception::class);
+
+	$Emp=new \App\EmpleadoPermanente($nombre="Esteban",$apellido="Valladar",$dni=30484549,$salario=58000,$fechaIngreso=(new \DateTime())->date_modify("01-06-2006",'+4 day'));
+
+	}
 	
 }
 ?>
